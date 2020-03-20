@@ -1,0 +1,27 @@
+{
+  "name": "rtc-server",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "npx watchify ./public/main.js -o ./public/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B1logic/rtc-server.git"
+  },
+  "author": "Bilogic",
+  "bugs": {
+    "url": "https://github.com/B1logic/rtc-server/issues"
+  },
+  "homepage": "https://github.com/B1logic/rtc-server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "simple-peer": "^9.6.2",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "watchify": "^3.11.1"
+  }
+}
