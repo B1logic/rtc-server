@@ -1,0 +1,33 @@
+.dropdown-btn {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #0061c1;
+}
+
+.dropdown-btn:hover {
+    background-color: #006bdf;
+    border-color: #0065d4;
+}
+
+.dropdown-btn:active {
+    background-color: #0065c0;
+    border-color: #005fb3;
+}
+
+.dropdown-item:hover {
+    background-color: lightgray;
+}
+
+.active {
+    color: #fff!important;
+}
+
+.active:hover {
+    background-color: #006bdf;
+    border-color: #0065d4;
+}
+
+.active:active {
+    background-color: #0065c0;
+    border-color: #005fb3;
+}
