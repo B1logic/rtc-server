@@ -2,7 +2,6 @@ let Peer = require('simple-peer');
 let socket = io();
 const video = document.querySelector('video');
 const filter = document.querySelector('#filter');
-const checkboxTheme = document.querySelector('#theme');
 let client = {};
 let currentFilter;
 //get stream
@@ -113,29 +112,10 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
     })
     .catch(err => document.write(err));
 
-checkboxTheme.addEventListener('click', () => {
-        if (checkboxTheme.checked === true) {
-            document.body.style.backgroundColor = '#212529';
-            if (document.querySelector('#muteText')) {
-                document.querySelector('#muteText').style.color = "#fff";
-            }
-
-        }
-        else {
-            document.body.style.backgroundColor = '#fff';
-            if (document.querySelector('#muteText')) {
-                document.querySelector('#muteText').style.color = "#212529";
-            }
-        }
-    }
-);
-
 function CreateDiv() {
     let div = document.createElement('div');
     div.setAttribute('class', "centered");
     div.id = "muteText";
     div.innerHTML = "Click to Mute/Unmute";
     document.querySelector('#peerDiv').appendChild(div);
-    if (checkboxTheme.checked === true)
-        document.querySelector('#muteText').style.color = "#fff"
 }

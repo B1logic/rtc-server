@@ -2,8 +2,14 @@
 <head>
     <title>Video Chat App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="other%20css%20and%20js/bootstrap/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="other%20css%20and%20js/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="other%20css%20and%20js/fontawesome/main.css">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="other%20css%20and%20js/animate.css">
+    <link id="theme" href="css/themes/white.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
@@ -22,10 +28,42 @@
         </div>
         <div class="col">
             <div class="float-right mt-3">
-                <input class="form-check-input" type="checkbox" id="theme">
-                <label class="form-check-label" for="theme">
-                    Dark Theme
-                </label>
+                <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#optionsModal">
+                    <i class="fal fa-cog"></i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="optionsModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="optionsModalTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h6>Change theme of site</h6>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="ThemeOptions" id="white" value="white">
+                                    <label class="form-check-label" for="white">White</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="ThemeOptions" id="dark" value="dark">
+                                    <label class="form-check-label" for="dark">Dark</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="ThemeOptions" id="blue" value="blue">
+                                    <label class="form-check-label" for="blue">Blue</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" onclick="submitChanges()" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -36,11 +74,34 @@
             </div>
         </div>
         <div class="col-12 col-sm-6 d-flex justify-content-center">
-            <div id="peerDiv" class="embed-responsive embed-responsive-16by9">
-            </div>
+            <div id="peerDiv" class="embed-responsive embed-responsive-16by9"></div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    function submitChanges() {
+        var selected_theme = document.getElement
+    }
+    
+    /*function changeTheme(color) {
+        var current_theme = document.getElementsByClassName('active').item(0);
+
+        if (current_theme.id !== color) {
+            current_theme.classList.remove("active");
+            document.getElementById('theme').href = 'css/' + color + '.css';
+            document.getElementById(color).classList.add("active");
+        }
+    }
+
+    $(".myDiv").hover(function(){
+        $(this).addClass('animated ' + $(this).data('action'));
+    });
+    $(".myDiv").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",function(){
+        $(this).removeClass('animated ' + $(this).data('action'));
+    });*/
+
+</script>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="bundle.js"></script>
