@@ -13,8 +13,7 @@ io.on('connection', function (socket) {
             if (clients === 1) {
                 this.emit('CreatePeer');
             }
-        }
-        else
+        } else
             this.emit('SessionActive');
         clients++;
     });
@@ -24,7 +23,7 @@ io.on('connection', function (socket) {
 });
 
 function Disconnect() {
-    if (clients > 1) {
+    if (clients > 0) {
         if (clients <= 2)
             this.broadcast.emit("Disconnect");
         clients--;
